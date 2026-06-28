@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/workoutListFragment">
+
+    <fragment
+        android:id="@+id/workoutListFragment"
+        android:name="com.sbeu.fitnessapp.presentation.workoutlist.WorkoutListFragment"
+        android:label="WorkoutList"
+        tools:layout="@layout/fragment_workout_list">
+
+        <action
+            android:id="@+id/action_workoutList_to_player"
+            app:destination="@id/playerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.sbeu.fitnessapp.presentation.player.PlayerFragment"
+        android:label="Player"
+        tools:layout="@layout/fragment_player">
+
+        <argument
+            android:name="workoutId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

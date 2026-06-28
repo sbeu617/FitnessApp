@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".presentation.main.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/container_margin"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchTextFieldLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/container_margin"
+        android:layout_marginTop="@dimen/stack_md"
+        android:hint="@string/search_bar_hint"
+
+        app:boxCornerRadiusBottomEnd="@dimen/radius_default"
+        app:boxCornerRadiusBottomStart="@dimen/radius_default"
+        app:boxCornerRadiusTopEnd="@dimen/radius_default"
+        app:boxCornerRadiusTopStart="@dimen/radius_default"
+
+        app:boxStrokeColor="@color/primary"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="@color/primary"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconMinSize="48dp"
+        app:startIconTint="@color/on_surface_variant">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/on_surface" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/filterScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/stack_md"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchTextFieldLayout">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filterChipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/container_margin"
+            app:chipSpacingHorizontal="@dimen/spacing_base"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                style="@style/Widget.Material3.Chip.Filter.Elevated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/all"
+                android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/chip_background"
+                app:chipStrokeColor="@color/outline_variant"
+                app:chipStrokeWidth="1dp"
+                app:itemIconTint="@color/chip_text_color" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCardio"
+                style="@style/Widget.Material3.Chip.Filter.Elevated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cardio"
+                android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/chip_background"
+                app:chipStrokeColor="@color/outline_variant"
+                app:chipStrokeWidth="1dp"
+                app:itemIconTint="@color/chip_text_color" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPower"
+                style="@style/Widget.Material3.Chip.Filter.Elevated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Power"
+                android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/chip_background"
+                app:chipStrokeColor="@color/outline_variant"
+                app:chipStrokeWidth="1dp"
+                app:itemIconTint="@color/chip_text_color" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipStretch"
+                style="@style/Widget.Material3.Chip.Filter.Elevated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stretch"
+                android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/chip_background"
+                app:chipStrokeColor="@color/outline_variant"
+                app:chipStrokeWidth="1dp"
+                app:itemIconTint="@color/chip_text_color" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/workoutRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_base"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterScrollView"
+        tools:listitem="@layout/item_workout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
