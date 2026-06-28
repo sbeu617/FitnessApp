@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/container_margin"
+    android:layout_marginVertical="@dimen/spacing_base"
+    app:cardBackgroundColor="@color/surface_container_lowest"
+    app:cardCornerRadius="@dimen/radius_default"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/outline_variant"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/workoutImage"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/workoutTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/container_margin"
+            android:layout_marginTop="@dimen/container_margin"
+            android:layout_marginEnd="@dimen/container_margin"
+            android:textColor="@color/on_surface"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workoutImage"
+            tools:text="Running" />
+
+        <TextView
+            android:id="@+id/workoutSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/container_margin"
+            android:layout_marginTop="@dimen/stack_sm"
+            android:layout_marginEnd="@dimen/container_margin"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workoutTitle"
+            tools:text="Subtitle text" />
+
+        <TextView
+            android:id="@+id/workoutTypeTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/container_margin"
+            android:layout_marginTop="@dimen/container_margin"
+            android:layout_marginBottom="@dimen/container_margin"
+            android:gravity="center_vertical"
+            android:drawablePadding="4dp"
+            android:text="Training"
+            android:textColor="@color/primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workoutSubtitle"
+            tools:drawableStart="@android:drawable/ic_media_play" />
+
+        <TextView
+            android:id="@+id/workoutDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:drawablePadding="4dp"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/workoutTypeTag"
+            app:layout_constraintStart_toEndOf="@+id/workoutTypeTag"
+            app:layout_constraintTop_toTopOf="@+id/workoutTypeTag"
+            tools:text="30 minutes"
+            tools:drawableStart="@android:drawable/ic_menu_recent_history" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
