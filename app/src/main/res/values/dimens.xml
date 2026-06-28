@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Отступы (Spacing) -->
+    <item name="spacing_base" type="dimen">8dp</item>
+    <item name="container_margin" type="dimen">16dp</item>
+    <item name="gutter" type="dimen">16dp</item>
+    <item name="stack_sm" type="dimen">4dp</item>
+    <item name="stack_md" type="dimen">12dp</item>
+    <item name="stack_lg" type="dimen">24dp</item>
+
+    <!-- Скругления углов (Shapes) -->
+    <item name="radius_sm" type="dimen">4dp</item>
+    <item name="radius_default" type="dimen">8dp</item>   <!-- Кнопки, карты тренировок -->
+    <item name="radius_md" type="dimen">12dp</item>
+    <item name="radius_lg" type="dimen">16dp</item>   <!-- Bottom sheets, крупные блоки -->
+</resources>
