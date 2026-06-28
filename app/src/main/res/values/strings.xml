@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Fitness App</string>
     <string name="title">Fitness</string>
-    <string name="search_bar_hint">Search workouts...</string>
+    <string name="search_bar_hint">Search</string>
     <string name="all">All</string>
+
+    <string name="workout_header">Workout</string>
+    <string name="default_workout_title">Утренняя пробежка</string>
+    <string name="default_duration">30 минут</string>
+    <string name="default_type">Тренировка</string>
+    <string name="default_level">Advanced</string>
+    <string name="about_workout_header">About this workout</string>
+    <string name="default_description">Идеальная пробежка для старта дня</string>
+    <string name="start_workout">Start Workout</string>
 </resources>

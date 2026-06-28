@@ -22,19 +22,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchTextFieldLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/container_margin"
         android:layout_marginTop="@dimen/stack_md"
-        android:autofillHints=""
         android:hint="@string/search_bar_hint"
-        android:inputType="text"
-        android:minHeight="48dp"
+
+        app:boxCornerRadiusBottomEnd="@dimen/radius_default"
+        app:boxCornerRadiusBottomStart="@dimen/radius_default"
+        app:boxCornerRadiusTopEnd="@dimen/radius_default"
+        app:boxCornerRadiusTopStart="@dimen/radius_default"
+
+        app:boxStrokeColor="@color/primary"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="@color/primary"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconMinSize="48dp"
+        app:startIconTint="@color/on_surface_variant">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/on_surface" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <HorizontalScrollView
         android:id="@+id/filterScrollView"
@@ -44,7 +68,7 @@
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
+        app:layout_constraintTop_toBottomOf="@+id/searchTextFieldLayout">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/filterChipGroup"
@@ -64,6 +88,7 @@
                 android:checked="true"
                 android:text="@string/all"
                 android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
                 app:chipBackgroundColor="@color/chip_background"
                 app:chipStrokeColor="@color/outline_variant"
@@ -77,6 +102,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cardio"
                 android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
                 app:chipBackgroundColor="@color/chip_background"
                 app:chipStrokeColor="@color/outline_variant"
@@ -90,6 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="Power"
                 android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
                 app:chipBackgroundColor="@color/chip_background"
                 app:chipStrokeColor="@color/outline_variant"
@@ -103,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:text="Stretch"
                 android:textColor="@color/chip_text_color"
+                app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
                 app:chipBackgroundColor="@color/chip_background"
                 app:chipStrokeColor="@color/outline_variant"
