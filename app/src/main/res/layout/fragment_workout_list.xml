@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".presentation.main.MainActivity">
+    tools:context=".presentation.workoutlist.WorkoutListFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -100,7 +100,7 @@
                 style="@style/Widget.Material3.Chip.Filter.Elevated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cardio"
+                android:text="@string/type_cardio"
                 android:textColor="@color/chip_text_color"
                 app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
@@ -114,7 +114,7 @@
                 style="@style/Widget.Material3.Chip.Filter.Elevated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Power"
+                android:text="@string/type_power"
                 android:textColor="@color/chip_text_color"
                 app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
@@ -128,7 +128,7 @@
                 style="@style/Widget.Material3.Chip.Filter.Elevated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stretch"
+                android:text="@string/type_stretch"
                 android:textColor="@color/chip_text_color"
                 app:checkedIconTint="@color/chip_text_color"
                 app:checkedIconVisible="true"
@@ -151,5 +151,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filterScrollView"
         tools:listitem="@layout/item_workout" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@id/workoutRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/workoutRecyclerView" />
+
+    <LinearLayout
+        android:id="@+id/errorView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/container_margin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/workoutRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/workoutRecyclerView">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="16sp"
+            tools:text="@string/error_workouts_load_failed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_base"
+            android:text="@string/retry" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/no_workouts_found"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/workoutRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/workoutRecyclerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,8 +23,8 @@
         tools:layout="@layout/fragment_player">
 
         <argument
-            android:name="workoutId"
-            app:argType="integer" />
+            android:name="workout"
+            app:argType="com.sbeu.fitnessapp.domain.model.Workout" />
     </fragment>
 
 </navigation>

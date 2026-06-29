@@ -13,17 +13,19 @@
         android:layout_marginTop="16dp"
         android:text="@string/workout_header"
         android:textColor="@color/primary"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:id="@+id/contentScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvHeader">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,6 +41,19 @@
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintTop_toTopOf="parent"
                 app:use_controller="true" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/qualityButton"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/quality_hd"
+                android:textColor="@android:color/white"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/playerView"
+                app:layout_constraintTop_toTopOf="@id/playerView" />
 
             <TextView
                 android:id="@+id/tvWorkoutTitle"
@@ -104,28 +119,6 @@
                     android:textColor="@color/on_surface_variant"
                     android:textSize="14sp" />
 
-                <View
-                    android:layout_width="4dp"
-                    android:layout_height="4dp"
-                    android:layout_marginHorizontal="8dp"
-                    android:background="@drawable/dot_separator" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_bolt"
-                    app:tint="@color/on_surface_variant" />
-
-                <TextView
-                    android:id="@+id/tvLevel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/default_level"
-                    android:textColor="@color/on_surface_variant"
-                    android:textSize="14sp" />
-
             </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
@@ -170,5 +163,46 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <LinearLayout
+        android:id="@+id/errorView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="16sp"
+            tools:text="@string/error_video_not_found" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/retry" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
